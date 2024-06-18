@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="Large Scale Indoor Visual-Geometric Multimodal Dataset and Benchmark for Novel View Synthesis">
+  <meta name="keywords" content="Novel View Synthesis, 3D Reconstruction, Indoor Dataset, Benchmark">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>IVGM: Large Scale Indoor Visual-Geometric Multimodal Dataset and Benchmark for Novel View Synthesis</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">IVGM: Large Scale Indoor Visual-Geometric Multimodal Dataset and Benchmark for Novel View Synthesis</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              Junming Cao</a><sup>1,2</sup>,
+            </span>
+            <span class="author-block">
+              Xiting Zhao</a><sup>3</sup>,
+            </span>
+            <span class="author-block">
+              Sören Schwertfeger</a><sup>3</sup>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>Shanghai Advanced Research Institute, Chinese Academy of Sciences,</span>
+            <span class="author-block"><sup>2</sup>University of Chinese Academy of Sciences,</span>
+            <span class="author-block"><sup>3</sup>ShanghaiTech University</span>
+          </div>
+ 
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <span class="link-block">
+                <a href="./static/paper.pdf"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://ivgm-dataset.github.io" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- <span class="link-block">
+                <a href="https://github.com/keunhong/3DRef" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                </a>
+              </span> -->
+              <span class="link-block">
+                <a href="https://ivgm-dataset.github.io" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="fas fa-globe"></i>
+                  </span>
+                  <span>Project Page</span>
+                </a>
+              </span>
+
+              <!-- Dataset Link. -->
+              <span class="link-block">
+                <a href="https://pan.baidu.com/s/1qD_ykm74Ui2SU8sQxtMqDw?pwd=4ply"
+                  class="external-link button is-normal is-rounded is-dark">
+                <span class="icon">
+                    <i class="far fa-images"></i>
+                </span>
+                <span>Raw Data (282.68GB)</span>
+                </a>
+              </span>
+              <!-- <span class="link-block">
+              <a href="https://robotics.shanghaitech.edu.cn/static/datasets/3DRef/seq2.tar.bz2"
+                  class="external-link button is-normal is-rounded is-dark">
+                <span class="icon">
+                    <i class="far fa-images"></i>
+                </span>
+                <span>Data Seq2 (21GB)</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://robotics.shanghaitech.edu.cn/static/datasets/3DRef/seq3.tar.bz2"
+                    class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="far fa-images"></i>
+                  </span>
+                  <span>Data Seq3 (42GB)</span>
+                  </a>
+              </span>
+              <span class="link-block">
+                <a href="https://robotics.shanghaitech.edu.cn/static/datasets/3DRef/reflection.tar.bz2"
+                    class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="far fa-images"></i>
+                  </span>
+                  <span>Data RGB, Network and Scipts (26GB)</span>
+                  </a>
+              </span> -->
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+ </section>
+
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+
+          <div class="content has-text-justified">
+            <p>Accurate reconstruction of indoor environments is crucial for applications in augmented reality, virtual reality, and robotics. However, existing indoor datasets are often limited in scale, lack ground-truth point clouds, and provide insufficient viewpoints, which impedes the development of robust novel view synthesis (NVS) techniques. To address these limitations, we introduce a new large-scale indoor dataset that features diverse and challenging scenes, including basements and long corridors. This dataset offers panoramic image sequences for comprehensive coverage, high-resolution point clouds, meshes, and textures as ground truth, and a novel benchmark specifically designed to evaluate NVS algorithms in complex indoor environments. Our dataset and benchmark aim to advance indoor scene reconstruction and facilitate the creation of more effective NVS solutions for real-world applications.</p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3">Dataset Overview</h2>
+    
+      
+        <div class="content has-text-justified">
+          <p>The IVGM dataset encompasses a diverse array of environments, meticulously captured by our custom-designed data acquisition vehicle across three distinct scenes. This collection includes two segments from school office floors and one scene from underground garages. It provides:</p>
+          <!-- <ul>
+            <li>48,024 labeled Lidar point clouds from 3 sensors (Ouster, Livox, Hesai)</li>
+            <li>3,799 labeled RGB images</li>
+            <li>Precise global alignment of all data</li>
+            <li>Labeled ground truth 3D meshes enabling automatic point cloud annotation</li>
+          </ul> -->
+          <table>
+            <thead>
+              <tr>
+                <th>Sequence Name</th>
+                <th>Area Size(m<sup>2</sup>)</th>
+                <th>Point Number</th>
+                <th>Insta Images</th>
+                <th>Titan Images</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Office Area1</td>
+                <td>2,989.63</td>
+                <td>76,488,066</td>
+                <td>1,610</td>
+                <td>12,872</td>
+              </tr>
+              <tr>
+                <td>Office Area2</td>
+                <td>2,651.00</td>
+                <td>86,233,513</td>
+                <td>2,669</td>
+                <td>21,608</td>
+              </tr>
+              <tr>
+                <td>Underground Garage</td>
+                <td>3,797.11</td>
+                <td>153,185,271</td>
+                <td>1,816</td>
+                <td>14,528</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <figure class="image">
+          <img src="./static/images/dataset.png" alt="Overview of 3DRef dataset">
+        </figure>
+      
+    
+  </div>
+ </section>
+ 
+ <section class="section">
+  <div class="container is-max-desktop">    
+    <h2 class="title is-3">Benchmark Results</h2>
+    <div class="columns is-centered">
+      <div class="column is-full">
+        <div class="content has-text-justified">
+          <p>To evaluate the applicability, versatility, and performance of our dataset on novel view synthesis algorithms, we tested several popular methods developed in recent years.</p>
+          <p>Key results show:</p>
+          <ul>
+            <li>The choice of camera system can significantly affect the performance of NVS algorithms.</li>
+            <li>Models trained with images from all five cameras better fit the images from all perspectives.</li>
+            <li> The inclusion of LiDAR point cloud data significantly enhances the performance of the novel view synthesis (NVS) algorithms.</li>
+          </ul>
+        </div>
+      </div>
+    </div> 
+      <div class="content has-text-justified">
+        <figure class="image">
+          <img src="./static/images/table4_results.png" alt="Lidar benchmark results">
+          <figcaption>Quantitative Comparison of Different Novel View Synthesis Methods in IVGM Dataset.</figcaption>
+        </figure>
+      </div>
+      <div class="content has-text-justified">
+        <figure class="image">
+          <img src="./static/images/table5_results.png" alt="RGB benchmark results">
+          <figcaption>Results of Different Input Image Dataset on IVGM Dataset. Images of Insta-single results are rendered using Insta-five camera pose and vice versa.</figcaption>
+        </figure>
+      </div>
+      <div class="content has-text-justified">
+        <figure class="image">
+          <img src="./static/images/table6_results.png" alt="RGB benchmark results">
+          <figcaption>Gaussian Splatting with Different Input Point Clouds results.</figcaption>
+        </figure>
+      </div>
+  </div>
+ </section>
+
+ <section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3">Dataset Format</h2>
+    <div class="content has-text-justified">
+      <p>In the dataset link, we provide the dataset in some folders. We describe the dataset format in the following. For the convinence of download, We separate the folder into 4 zip files.</p> 
+      <ul>
+        <li>
+          <strong>raw</strong>: Contains the raw sensor data for each sequence, including pose files, images, meshes, raycast point clouds, and more. Each sequence is in a separate subfolder.
+          <ul>
+            <li>seq1
+              <ul>
+                <li>hesai_pose.txt</li>
+                <li>images</li>
+                <li>livox_pose.txt</li>
+                <li>mesh</li>
+                <li>ouster_pose.txt</li>
+                <li>raycast
+                  <ul>
+                    <li>hesai</li>
+                    <li>livox</li>
+                    <li>ouster</li>
+                  </ul>
+                </li>
+                <li>vo_kf.txt</li>
+              </ul>
+            </li>
+            <li>seq2, seq3, ...</li>
+          </ul>
+        </li>
+        <li>
+          <strong>rgb</strong>: Folder for RGB images and masks split into train/test folders for each label type (glass, mirror, other reflective, all reflective). Images and masks are paired in separate subfolders.
+          <ul>
+            <li>alllabel
+              <ul>
+                <li>test
+                  <ul>
+                    <li>image</li>
+                    <li>mask</li>
+                  </ul>
+                </li>
+                <li>train
+                  <ul>
+                    <li>image</li>
+                    <li>mask</li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li>glass, mirror, otherref, ...</li>
+          </ul>
+        </li>
+        <li><strong>script</strong>: Helper scripts for dataset processing.</li>
+        <li><strong>semantickitti</strong>: Labeled Lidar point clouds in SemanticKitti format, with separate folders for XYZI and XYZIR channels. Point clouds for each sequence are under sequences/00/velodyne. The data can be generate using the provided script pcd2kitti.py</li>
+        <li><strong>network</strong>: Pretrained weights for reflection detection networks like EBLNet, PCSeg, and SATNet.</li>
+      </ul>
+      <p>The <code>raw</code> folder contains the core data needed to recreate the annotations and formatted dataset. The <code>rgb</code> and <code>semantickitti</code> folders provide the formatted data split into train/test sets ready for benchmarking. The <code>network</code> folder enables out-of-the-box evaluation using provided models. Refer to the readme for additional details.</p>
+    </div>
+  </div>
+ </section>
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{zhao20233dref,
+  title={3DRef: 3D Dataset and Benchmark for Reflection Detection in RGB and Lidar Data},
+  author={Zhao, Xiting and Schwertfeger, S{\"o}ren},
+  journal   = {3DV},
+  year      = {2024},
+ }</code></pre>
+  </div>
+ </section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link"
+         href="./static/paper.pdf">
+        <i class="fas fa-file-pdf"></i>
+      </a>
+      <a class="icon-link" href="https://robotics.shanghaitech.edu.cn">
+        <i class="fas fa-university"></i>
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            This means you are free to borrow the <a
+              href="https://github.com/nerfies/nerfies.github.io">source code</a> of this website,
+            we just ask that you link back to this page in the footer.
+            Please remember to remove the analytics code included in the header of the website which
+            you do not want on your website.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
